@@ -102,6 +102,7 @@ function logic(button) {
             number.textContent = memory.firstOperand
             memory.secondOperand = ''
             memory.operator = ''
+            i2 = false
             i1 = true
 
         }
@@ -116,6 +117,8 @@ function logic(button) {
             operation.textContent = `${memory.firstOperand} ${memory.operator} ${memory.secondOperand}`
         }
     }
+    console.log(memory)
+    console.log(i1, io, i2)
 }
 
 buttons.forEach(function (button) {
