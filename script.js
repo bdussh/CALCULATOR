@@ -20,12 +20,12 @@ function subtract(a, b) {
 }
 
 function multiply(a, b) {
-    return parseFloat(a) * parseFloat(b)
+    return parseFloat((parseFloat(a) * parseFloat(b)).toFixed(5))
 }
 
 function divide(a, b) {
     if (b !== '0') {
-        return parseFloat(a) / parseFloat(b)
+        return parseFloat((parseFloat(a) / parseFloat(b)).toFixed(5))
     }
 }
 
@@ -113,6 +113,25 @@ function logic(button) {
             operation.textContent = memory.firstOperand
         } else if (i2 === true) {
             memory.secondOperand = memory.secondOperand.slice(0, -1)
+            number.textContent = memory.secondOperand
+            operation.textContent = `${memory.firstOperand} ${memory.operator} ${memory.secondOperand}`
+        }
+    } else if (button.id === 'point') {
+        if (i1 === true) {
+            if (memory.firstOperand === '') {
+                memory.firstOperand = '0.'
+            } else if (!memory.firstOperand.includes('.')) {
+                memory.firstOperand += '.'
+            }
+            number.textContent = memory.firstOperand
+            operation.textContent = memory.firstOperand
+
+        } else if (i2 === true) {
+            if (memory.secondOperand === '') {
+                memory.secondOperand = '0.'
+            } else if (!memory.secondOperand.includes('.')) {
+                memory.secondOperand += '.'
+            }
             number.textContent = memory.secondOperand
             operation.textContent = `${memory.firstOperand} ${memory.operator} ${memory.secondOperand}`
         }
