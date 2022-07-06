@@ -12,20 +12,20 @@ const number = document.getElementById("number")
 let buttons = document.querySelectorAll("button")
 
 function add(a, b) {
-    return parseFloat(a) + parseFloat(b)
+    return Math.round((parseFloat(a) + parseFloat(b)) * 1000) / 1000
 }
 
 function subtract(a, b) {
-    return parseFloat(a) - parseFloat(b)
+    return Math.round((parseFloat(a) - parseFloat(b)) *1000) /1000
 }
 
 function multiply(a, b) {
-    return parseFloat((parseFloat(a) * parseFloat(b)).toFixed(5))
+    return Math.round(parseFloat(a) * parseFloat(b) *1000)/1000
 }
 
 function divide(a, b) {
     if (b !== '0') {
-        return parseFloat((parseFloat(a) / parseFloat(b)).toFixed(5))
+        return Math.round((parseFloat(a) / parseFloat(b))*1000)/1000
     }
 }
 
